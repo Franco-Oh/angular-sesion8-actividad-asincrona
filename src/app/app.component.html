@@ -1,36 +1,36 @@
 <div class="container">
-  <div>
-
-    <label for="">Nombre</label>
-    <input type="text" name="" id="" #nombre>
-    <label for="">Apellido</label>
-    <input type="text" name="" id="" #apellido>
-    <label for="">Edad</label>
-    <input type="number" name="" id="" #edad>
-  </div>
-  <div>
-
-    <button type="button" class="btn btn-secondary" (click)="addDatos(nombre.value, apellido.value, edad.value)">Agregar datos</button>
-  </div>
-  <div>
-    <table class="table">
-      <thead>
-        <tr>
-          <th scope="col">Nombres</th>
-          <th scope="col">Apellidos</th>
-          <th scope="col">Edad</th>
-          <th scope="col">Condicion</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr *ngFor="let persona of info">
-          <td>{{persona.nombre}}</td>
-          <td>{{persona.apellido}}</td>
-          <td>{{persona.edad}}</td>
-          <td *ngIf="persona.edad < 18">{{persona.nombre}} es menor de edad</td>
-          <td *ngIf="persona.edad >= 18">{{persona.nombre}} es mayor de edad</td>
-        </tr>
-      </tbody>
-    </table>
+  <div class="row d-flex justify-content-center align-items-center">
+    <div class="mt-5">
+      <label for="nom" class="mt-2">Nombre</label>
+      <input type="text" class="form-control mt-2" name="" id="nom" placeholder="Ingrese los nombres" #nombre>
+      <label for="apell" class="mt-2">Apellido</label>
+      <input type="text" class="form-control mt-2" name="" id="apell" placeholder="Ingrese los apellidos" #apellido>
+      <label for="edad" class="mt-2">Edad</label>
+      <input type="number"class="form-control mt-2"  name="" id="edad" placeholder="Ingrese la edad" #edad>
+    </div>
+    <div class="col-3 m-5">
+      <button type="button" class="btn btn-secondary" (click)="addDatos(nombre.value, apellido.value, edad.value)">Agregar datos</button>
+    </div>
+    <div>
+      <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">Nombres</th>
+            <th scope="col">Apellidos</th>
+            <th scope="col">Edad</th>
+            <th scope="col">Condicion</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let persona of info">
+            <td>{{persona.nombre}}</td>
+            <td>{{persona.apellido}}</td>
+            <td>{{persona.edad}}</td>
+            <td *ngIf="persona.edad < 18">{{persona.nombre}} es menor de edad</td>
+            <td *ngIf="persona.edad >= 18">{{persona.nombre}} es mayor de edad</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
   </div>
 </div>

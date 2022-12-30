@@ -9,9 +9,10 @@ export class AppComponent {
   title = 'actividad-8';
   info = [{
     nombre:"Luis",
-    apellido:"Luis",
+    apellido:"Ejemplo",
     edad:17
   }];
+
   addDatos(a:any, b:any, c:any){
     console.log("esta funcionand el boton " + a + b + c);
     this.info.push({nombre:a, apellido:b, edad:c});
