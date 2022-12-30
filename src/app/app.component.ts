@@ -7,4 +7,14 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'actividad-8';
+  info = [{
+    nombre:"Luis",
+    apellido:"Luis",
+    edad:17
+  }];
+  addDatos(a:any, b:any, c:any){
+    console.log("esta funcionand el boton " + a + b + c);
+    this.info.push({nombre:a, apellido:b, edad:c});
+    console.log(this.info)
+  }
 }

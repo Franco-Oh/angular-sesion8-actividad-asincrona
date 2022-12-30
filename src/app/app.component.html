@@ -1,0 +1,36 @@
+<div class="container">
+  <div>
+
+    <label for="">Nombre</label>
+    <input type="text" name="" id="" #nombre>
+    <label for="">Apellido</label>
+    <input type="text" name="" id="" #apellido>
+    <label for="">Edad</label>
+    <input type="number" name="" id="" #edad>
+  </div>
+  <div>
+
+    <button type="button" class="btn btn-secondary" (click)="addDatos(nombre.value, apellido.value, edad.value)">Agregar datos</button>
+  </div>
+  <div>
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">Nombres</th>
+          <th scope="col">Apellidos</th>
+          <th scope="col">Edad</th>
+          <th scope="col">Condicion</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let persona of info">
+          <td>{{persona.nombre}}</td>
+          <td>{{persona.apellido}}</td>
+          <td>{{persona.edad}}</td>
+          <td *ngIf="persona.edad < 18">{{persona.nombre}} es menor de edad</td>
+          <td *ngIf="persona.edad >= 18">{{persona.nombre}} es mayor de edad</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
